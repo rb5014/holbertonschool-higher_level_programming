@@ -1,4 +1,6 @@
 {
 	"python.linting.pycodestyleEnabled": true,
-	"python.linting.enabled": true
+	"python.linting.enabled": true,
+	"files.autoSave": "afterDelay",
+	"python.terminal.activateEnvInCurrentTerminal": true
 }
