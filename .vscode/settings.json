@@ -2,5 +2,6 @@
 	"python.linting.pycodestyleEnabled": true,
 	"python.linting.enabled": true,
 	"files.autoSave": "afterDelay",
-	"python.terminal.activateEnvInCurrentTerminal": true
+	"python.terminal.activateEnvInCurrentTerminal": true,
+	"editor.insertSpaces": true
 }
