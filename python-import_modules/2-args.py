@@ -6,6 +6,6 @@ if __name__ == "__main__":
     elif len(argv) == 2:
         print("1 argument:")
     else:
-        print(len(argv), "arguments:")
+        print(len(argv) - 1, "arguments:")
     for i in range(1, len(argv)):
         print("{:d}: {:s}" .format(i, argv[i]))
