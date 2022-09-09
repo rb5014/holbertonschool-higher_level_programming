@@ -5,12 +5,14 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     from calculator_1 import add, sub, mul, div
-    func = add, sub, mul, div
-    op = "+", "-", "*", "/"
-
-    for i in range(1, 4):
-        if argv[2] == op[i]:
-            print(argv[1], op[i], argv[3], "=", func(argv[1], argv[3]))
+    list_func = add, sub, mul, div
+    list_op = "+", "-", "*", "/"
+    a = int(argv[1])
+    b = int(argv[3])
+    op = argv[2]
+    for i in range(0, 4):
+        if op == list_op[i]:
+            print(a, op, b, "=", list_func[i](a, b))
             exit(0)
     print("Unknown operator. Available operators: +, -, * and /")
     exit(1)
