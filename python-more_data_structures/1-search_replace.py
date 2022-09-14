@@ -12,6 +12,6 @@ You are not allowed to import any module
 
 
 def search_replace(my_list, search, replace):
-    newList = list(map(lambda x: str(x).replace(str(search), str(replace)),
-                       my_list))
+    newList = list(map(lambda x: int(str(x).replace
+                                     (str(search), str(replace))), my_list))
     return newList
