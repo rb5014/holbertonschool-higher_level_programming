@@ -7,8 +7,5 @@ You are not allowed to import any module
 '''
 
 
-from hashlib import new
-
-
 def common_elements(set_1, set_2):
     return set_1 & set_2
