@@ -11,7 +11,6 @@ Initial matrix should not be modified
 You are not allowed to import any module
 You are allowed to use regular loops, map, etc.
 '''
-from operator import ne
 
 
 def square_matrix_simple(matrix=[]):
