@@ -16,4 +16,4 @@ def print_sorted_dictionary(a_dictionary):
     for key, value in sortedList:
         sortedDict[key] = value
     for key, value in sortedDict.items():
-        print(key, ': ', value)
+        print(f'{key}: {value}')
