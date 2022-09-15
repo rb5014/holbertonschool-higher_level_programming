@@ -8,9 +8,6 @@ You can assume all students have a different score
 You are not allowed to import any module'''
 
 
-from re import A
-
-
 def best_score(a_dictionary):
     if not a_dictionary:
         return None
