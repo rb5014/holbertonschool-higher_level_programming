@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 ''' Function that prints x elements of a list.
 
 Prototype: def safe_print_list(my_list=[], x=0):
