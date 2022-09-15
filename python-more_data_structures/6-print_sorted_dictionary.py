@@ -11,5 +11,6 @@ You are not allowed to import any module'''
 
 
 def print_sorted_dictionary(a_dictionary):
-    print("\n".join(': '.join(str(keyval) for keyval in items)
-                    for items in sorted(a_dictionary.items())))
+    if (a_dictionary):
+        print("\n".join(': '.join(str(keyval) for keyval in items)
+                        for items in sorted(a_dictionary.items())))
