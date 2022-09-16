@@ -23,13 +23,10 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             resList[i] = my_list_1[i] / my_list_2[i]
         except ZeroDivisionError:
-            resList[i] = 0
-            print("division by zero")
+            print("division by 0")
         except TypeError:
-            resList[i] = 0
             print("wrong type")
         except IndexError:
-            resList[i] = 0
             print("out of range")
         finally:
             i += 1
