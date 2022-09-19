@@ -14,9 +14,6 @@ You are not allowed to import any module
 """
 
 
-from typing import Sized
-
-
 class Square:
     """defines a square by: (based on 3-square.py)"""
     def __init__(self, size=0):
