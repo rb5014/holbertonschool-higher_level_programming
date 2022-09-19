@@ -50,8 +50,8 @@ class Square:
     @position.setter
     def position(self, value):
         for n in value:
-            if type(n) != int or n < 0:
-                raise TypeError("position must be a tuple of 2" +
+            if len(value) != 2 or type(n) != int or n < 0:
+                raise TypeError("position must be a tuple of 2 " +
                                 "positive integers")
         self.__private = value
 
