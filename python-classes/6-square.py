@@ -49,17 +49,20 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not all(type(n) == int for n in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__private = value
+        for n in value:
+            if type(n) != int or n < 0:
+                raise TypeError("position must be a tuple of 2" +
+                                "positive integers")
+        self.__private = value
 
     def area(self):
         return self.__size**2
 
     def my_print(self):
+        for p1 in range(self.position[1]):
+            print()
         for i in range(self.size):
-            for k in range(self.position[0]):
+            for p0 in range(self.position[0]):
                 print(' ', end='')
             for j in range(self.size):
                 print('#', end='')
