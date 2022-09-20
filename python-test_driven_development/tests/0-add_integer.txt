@@ -52,3 +52,13 @@ if at least of the values isn't a number
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
+
+::
+
+	>>> add_integer(float('inf'), 4)
+	89
+
+::
+
+	>>> add_integer(4, float('inf'))
+	89
