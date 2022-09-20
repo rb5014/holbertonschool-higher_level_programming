@@ -14,7 +14,7 @@ that value is equivalent to using the ``+`` operator.
 
 ::
 
-    >>> from ../0-add_integer import add_integer
+    >>> from 0-add_integer import add_integer
     >>> add_integer(2, 3)
     5
 
