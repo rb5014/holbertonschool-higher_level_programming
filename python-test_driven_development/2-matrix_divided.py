@@ -5,6 +5,8 @@
 
 def matrix_divided(matrix, div):
     """function that divides all the elements of a matrix"""
+    if not matrix:
+        return -1
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
     if div == 0:
@@ -16,5 +18,6 @@ def matrix_divided(matrix, div):
             if type(x) != int and type(x) != float:
                 raise TypeError("matrix must be a matrix " +
                                 "(list of lists) of integers/floats")
-    divided = [list(map(lambda x: round(x/div, 2), row)) for row in matrix]
+    divided = [list(map(lambda x: round(x/div, 2) if x/div != float('inf')
+                        else 0.0, row)) for row in matrix]
     return divided
