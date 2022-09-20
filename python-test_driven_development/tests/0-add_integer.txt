@@ -55,10 +55,10 @@ if at least of the values isn't a number
 
 ::
 
-	>>> add_integer(float('NaN'), 4)
+	>>> add_integer(float('inf'), 4)
 	89
 
 ::
 
-	>>> add_integer(4, float('NaN'))
+	>>> add_integer(4, float('inf'))
 	89

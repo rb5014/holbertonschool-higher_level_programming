@@ -27,6 +27,8 @@ You are not allowed to import any module
 
 
 class Node:
+    """_summary_ Class of the node
+    """
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -54,6 +56,8 @@ class Node:
             self.__data = value
     
     class SinglyLinkedList:
+        """_summary_ class of the singly linked list
+        """
         def __init__(self):
             pass        
         
