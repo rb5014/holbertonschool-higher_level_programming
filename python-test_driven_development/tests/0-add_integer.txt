@@ -62,3 +62,8 @@ if at least of the values isn't a number
 
 	>>> add_integer(4, float('inf'))
 	89
+
+::
+
+	>>> add_integer(float('inf'), float('inf'))
+	89
