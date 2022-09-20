@@ -5,7 +5,7 @@ print(add_integer(1, 2))
 print(add_integer(100, -2))
 print(add_integer(2))
 print(add_integer(100.3, -2))
-print(add_integer(float('inf'), 4))
+print(add_integer(4, float('inf')))
 print(add_integer(float('nan'), 4))
 try:
     print(add_integer(4, "School"))
