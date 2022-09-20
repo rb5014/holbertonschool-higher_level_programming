@@ -3,7 +3,7 @@
 	"python.linting.enabled": true,
 	"files.autoSave": "afterDelay",
 	"python.terminal.activateEnvInCurrentTerminal": true,
-    "editor.insertSpaces": false,
+    "editor.insertSpaces": true,
     "python.defaultInterpreterPath": "python",
     "python.linting.pydocstyleEnabled": false
 }
