@@ -4,7 +4,6 @@
 Allo
 
 >>> text_indentation("")
-<BLANKLINE>
 
 >>> text_indentation(".")
 .
