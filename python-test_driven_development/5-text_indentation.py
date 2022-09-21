@@ -16,7 +16,7 @@ def text_indentation(text=""):
     """
     afterDelim = False
 
-    if isinstance(text, str) is False:
+    if not text or isinstance(text, str) is False:
         raise TypeError("text must be a string")
 
     for i in range(len(text)):
