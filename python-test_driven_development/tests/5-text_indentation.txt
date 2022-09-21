@@ -3,6 +3,9 @@
 >>> text_indentation("Allo")
 Allo
 
+>>> text_indentation(None)
+<BLANKLINE>
+
 >>> text_indentation(".")
 .
 <BLANKLINE>
@@ -20,7 +23,6 @@ What's my name?
 <BLANKLINE>
 James Bond.
 <BLANKLINE>
-
 
 >>> text_indentation(2)
 Traceback (most recent call last):
