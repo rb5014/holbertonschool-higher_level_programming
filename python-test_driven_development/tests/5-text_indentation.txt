@@ -3,7 +3,7 @@
 >>> text_indentation("Allo")
 Allo
 
->>> text_indentation(None)
+>>> text_indentation("")
 <BLANKLINE>
 
 >>> text_indentation(".")
