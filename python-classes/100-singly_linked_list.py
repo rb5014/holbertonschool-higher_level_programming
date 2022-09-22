@@ -59,7 +59,7 @@ class SinglyLinkedList:
     """_summary_ class of the singly linked list
     """
     def __init__(self):
-        self.__head = None
+        self.__head = []
 
     def __str__(self):
         result = ""
