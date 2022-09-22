@@ -11,7 +11,7 @@ property def next_node(self): to retrieve it
 property setter def next_node(self, value): to set it:
 next_node can be None or must be a Node, otherwise raise a TypeError exception
 with the message next_node must be a Node object
-Instantiation with data and next_node: 
+Instantiation with data and next_node:
 def __init__(self, data, next_node=None):
 And, write a class SinglyLinkedList that defines a singly linked list by:
 
@@ -30,8 +30,8 @@ class Node:
     """_summary_ Class of the node
     """
     def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
