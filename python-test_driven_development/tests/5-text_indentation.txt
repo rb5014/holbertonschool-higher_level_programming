@@ -1,0 +1,32 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Allo")
+Allo
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+>>> text_indentation("?")
+?
+<BLANKLINE>
+
+>>> text_indentation(":")
+:
+<BLANKLINE>
+
+>>> text_indentation("What's my name?     James Bond.")
+What's my name?
+<BLANKLINE>
+James Bond.
+<BLANKLINE>
+
+>>> text_indentation(2)
+Traceback (most recent call last):
+TypeError: text must be a string
+
