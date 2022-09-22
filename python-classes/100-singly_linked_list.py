@@ -39,10 +39,7 @@ class Node:
 
     @data.setter
     def data(self, value):
-        if type(value) != int:
-            raise TypeError("data must be an integer")
-        else:
-            self.__data = value
+        self.__data = value
 
     @property
     def next_node(self):
@@ -73,5 +70,8 @@ class SinglyLinkedList:
         return result
 
     def sorted_insert(self, value):
-        self.__head.append(value)
+        try:
+            self.__head.append(int(value))
+        except TypeError:
+            raise TypeError("data must be an integer")
         self.__head.sort()
