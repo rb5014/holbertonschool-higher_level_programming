@@ -70,8 +70,7 @@ class SinglyLinkedList:
         return result
 
     def sorted_insert(self, value):
-        try:
-            self.__head.append(int(value))
-        except TypeError:
+        if type(value) is not int:
             raise TypeError("data must be an integer")
+        self.__head.append(value)
         self.__head.sort()
