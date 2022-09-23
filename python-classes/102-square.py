@@ -17,10 +17,6 @@ You are not allowed to import any module
 """
 
 
-from functools import total_ordering
-
-
-@total_ordering
 class Square:
     """defines a square by: (based on 3-square.py)"""
     def __init__(self, size=0):
@@ -45,12 +41,27 @@ class Square:
     def _is_valid_operand(self, other):
         return hasattr(other, "area")
 
+    def __lt__(self, other):
+        if not self._is_valid_operand(other):
+            return NotImplemented
+        return self.area() < other.area()
+
+    def __le__(self, other):
+        if not self._is_valid_operand(other):
+            return NotImplemented
+        return self.area() <= other.area()
+
     def __eq__(self, other):
         if not self._is_valid_operand(other):
             return NotImplemented
         return self.area() == other.area()
 
-    def __lt__(self, other):
+    def __gt__(self, other):
         if not self._is_valid_operand(other):
             return NotImplemented
-        return self.area() < other.area()
+        return self.area() > other.area()
+
+    def __ge__(self, other):
+        if not self._is_valid_operand(other):
+            return NotImplemented
+        return self.area() >= other.area()
