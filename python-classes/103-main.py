@@ -2,7 +2,7 @@
 from dis import dis
 Circle = __import__('103-magic_class').MagicClass
 
-c = Circle(10)
+c = Circle()
 print()
 print(c.area())
 print()
