@@ -73,14 +73,14 @@ If m_a and m_b can’t be multiplied: raise a ValueError exception with the
     #               #
 
     # Initialisation of new matrix
-    rows = len(m_a)
-    cols = len(m_b)
-    mul_ab = [[0 for i in range(cols)] for j in range(rows)]
+    new_rows = len(m_a)
+    new_cols = len(m_b[0])
+    mul_ab = [[0 for i in range(new_cols)] for j in range(new_rows)]
     # loop for rows
-    for i in range(rows):
+    for i in range(new_rows):
         # loop for columns
-        for j in range(cols):
+        for j in range(new_cols):
             # loop for multiplication
-            for k in range(len(m_b[0])):
+            for k in range(len(m_b)):
                 mul_ab[i][j] += m_a[i][k] * m_b[k][j]
     return mul_ab
