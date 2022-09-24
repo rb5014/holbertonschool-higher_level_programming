@@ -3,7 +3,7 @@
 """
 
 
-def matrix_mul(m_a, m_b):
+def matrix_mul(m_a=[[1]], m_b=[[1]]):
     """_summary_ - multiplies 2 matrices
 
     Args:
@@ -81,6 +81,6 @@ If m_a and m_b can’t be multiplied: raise a ValueError exception with the
         # loop for columns
         for j in range(cols):
             # loop for multiplication
-            for k in range(cols):
+            for k in range(len(m_b[0])):
                 mul_ab[i][j] += m_a[i][k] * m_b[k][j]
     return mul_ab
