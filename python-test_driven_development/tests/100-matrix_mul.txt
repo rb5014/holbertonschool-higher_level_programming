@@ -1,0 +1,104 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+[[7, 10], [15, 22]]
+
+>>> m_a = [[1, 2]]
+>>> m_b =  [[3, 4], [5, 6]]
+>>> matrix_mul(m_a, m_b)
+[[13, 16]]
+
+#if m_a is not a list
+>>> m_a = 5
+>>> m_b = [[1,2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+
+#if m_b is not a list
+>>> m_a = [[1,2], [3, 4]]
+>>> m_b = 5
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+#if m_a is not a list of lists
+>>> m_a = [5, 4]
+>>> m_b = [[1,2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists
+
+#if m_b is not a list of lists
+>>> m_a = [[1,2], [3, 4]]
+>>> m_b = [5, 9]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+
+#if m_a is empty
+>>> m_a = []
+>>> m_b = [[5, 9], [2, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+
+#if m_b is empty
+>>> m_a = [[5, 9], [2, 4]]
+>>> m_b = [[]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
+#if one element of m_a is not an integer or a float
+>>> m_a = [[1, 'notint'], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 53, in matrix_mul
+TypeError: m_a should contain only integers or floats
+
+
+#if one element of m_b is not an integer or a float
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 'notfloat'], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 56, in matrix_mul
+TypeError: m_b should contain only integers or floats
+
+#if m_a is not a rectangle
+#(all ‘rows’ should be of the same size)
+>>> m_a = [[1, 2, 9], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must be of the same size
+
+#if m_b is not a rectangle
+#(all ‘rows’ should be of the same size)
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2, 4, 7], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_b must be of the same size
+
+#If m_a and m_b can’t be multiplied
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
