@@ -112,7 +112,4 @@ ValueError: m_a and m_b can't be multiplied
 
 # if two arguments are missing
 >>> matrix_mul()
-Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-    File "<stdin>", line 40, in matrix_mul
-TypeError: m_a must be a list
+[[1]]
