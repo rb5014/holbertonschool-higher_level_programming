@@ -11,7 +11,7 @@ property def next_node(self): to retrieve it
 property setter def next_node(self, value): to set it:
 next_node can be None or must be a Node, otherwise raise a TypeError exception
 with the message next_node must be a Node object
-Instantiation with data and next_node: 
+Instantiation with data and next_node:
 def __init__(self, data, next_node=None):
 And, write a class SinglyLinkedList that defines a singly linked list by:
 
@@ -32,33 +32,47 @@ class Node:
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
-        
+
     @property
     def data(self):
         return self.__data
-    
+
     @data.setter
     def data(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        else:
-            self.__data = value
-            
+        self.__data = value
+
     @property
     def next_node(self):
         return self.__next_node
-    
-    @data.setter
+
+    @next_node.setter
     def next_node(self, value):
-        if type(value) != Node and value:
+        if value and type(value) != Node:
             raise TypeError("next_node must be a Node object")
         else:
-            self.__data = value
-    
-    class SinglyLinkedList:
-        """_summary_ class of the singly linked list
-        """
-        def __init__(self):
-            pass        
-        
-        def sorted_insert(self, value):
+            self.__next_node = value
+
+
+class SinglyLinkedList:
+    """_summary_ class of the singly linked list
+    """
+    def __init__(self):
+        self.__head = []
+
+    def __str__(self):
+        result = ""
+        flag = False
+        for i in self.__head:
+            if flag is True:
+                result += "\n"
+            result += f"{i}"
+            flag = True
+        return result
+
+    def sorted_insert(self, value):
+        if type(value) is not int:
+            raise TypeError("data must be an integer")
+        self.__head.append(value)
+        self.__head.sort()

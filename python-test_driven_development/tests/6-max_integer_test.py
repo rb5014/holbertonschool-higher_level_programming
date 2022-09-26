@@ -41,6 +41,3 @@ class TestMaxInteger(unittest.TestCase):
         testList = [1, 5, 53]
         self.assertEqual(max_integer(testList), 53, "\'Max_End\' failed")
 
-
-if __name__ == '__main__':
-    unittest.main()
