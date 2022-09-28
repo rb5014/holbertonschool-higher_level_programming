@@ -14,10 +14,10 @@ class Rectangle(BaseGeometry):
         width and height must be positive integers, validated
          by integer_validator
         """
-        self.__width = width
-        self.__height = height
-        self.integer_validator("width", self.__width)
-        self.integer_validator("height", self.__height)
+        self._width = width
+        self._height = height
+        self.integer_validator("width", self._width)
+        self.integer_validator("height", self._height)
 
     def area(self):
         """ raises an Exception with the message area() is not implemented

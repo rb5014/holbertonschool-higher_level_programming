@@ -3,5 +3,5 @@ Square = __import__('11-square').Square
 
 s = Square(13)
 
-print(s.__str__())
+print(dir(s))
 print(s.area())
