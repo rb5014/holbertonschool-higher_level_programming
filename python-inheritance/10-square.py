@@ -14,7 +14,7 @@ class Square(Rectangle):
         size must be a positive integer, validated by integer_validator
         """
         self.__size = size
-        self.integer_validator("width", self.__size)
+        self.integer_validator("size", self.__size)
 
     def area(self):
         """ raises an Exception with the message area() is not implemented

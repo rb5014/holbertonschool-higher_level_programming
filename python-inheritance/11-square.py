@@ -1,28 +1,26 @@
 #!/usr/bin/python3
-"""_summary_ module that contains the class Recctangle
+"""_summary_ module that contains the class Rectangle
     """
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Rectangle(BaseGeometry):
-    """  (based on 7-base_geometry.py).
+class Square(Rectangle):
+    """   inherits from Rectangle (9-rectangle.py)
     """
 
-    def __init__(self, width, height):
+    def __init__(self, size):
         """
-        width and height must be private. No getter or setter
-        width and height must be positive integers, validated
-         by integer_validator
+        size must be private. No getter or setter
+        size must be a positive integer, validated by integer_validator
         """
-        self._width = width
-        self._height = height
-        self.integer_validator("width", self._width)
-        self.integer_validator("height", self._height)
+        self.integer_validator("size", size)
+        self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         """ raises an Exception with the message area() is not implemented
         """
-        return self._height * self._width
+        return self.__size ** 2
 
     def integer_validator(self, name, value):
         """ validates value:
@@ -38,4 +36,4 @@ class Rectangle(BaseGeometry):
             raise ValueError(name + " must be greater than 0")
 
     def __str__(self):
-        return f"[Rectangle] {self._width}/{self._height}"
+        return f"[Square] {self._width}/{self._height}"

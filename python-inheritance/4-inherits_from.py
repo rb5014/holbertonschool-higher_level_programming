@@ -13,4 +13,4 @@ def inherits_from(obj, a_class):
         a_class (_type_): class to compare with object
     """
 
-    return isinstance(obj, a_class) and not type(obj) is a_class
+    return isinstance(obj, a_class) and type(obj) is not a_class
