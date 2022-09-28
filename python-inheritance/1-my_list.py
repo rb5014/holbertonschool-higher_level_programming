@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""_summary_ module that contains the function print_sorted
+"""_summary_ module that contains the class MyList and function print_sorted
     """
 
 

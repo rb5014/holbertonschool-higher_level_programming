@@ -7,6 +7,6 @@ def lookup(obj):
     """_summary_ Returns a list object
 
     Args:
-        obj (_type_): _description_
+        obj (_type_): object
     """
     return dir(obj)
