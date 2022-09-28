@@ -10,3 +10,13 @@
 
 >>> print(str(my_list))
 []
+
+>>> my_list.append()
+Traceback (most recent call last):
+TypeError: append() takes exactly one argument (0 given)
+
+>>> my_list.append(2)
+>>> my_list.append(-3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[-3, 2, 5]
