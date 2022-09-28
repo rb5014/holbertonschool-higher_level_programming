@@ -7,3 +7,6 @@
 
 >>> print(sorted(my_list))
 []
+
+>>> print(str(my_list))
+[]
