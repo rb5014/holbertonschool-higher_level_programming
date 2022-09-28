@@ -9,4 +9,4 @@ def lookup(obj):
     Args:
         obj (_type_): _description_
     """
-    obj.dir()
+    return dir(obj)
