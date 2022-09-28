@@ -11,8 +11,8 @@ def add_attribute(obj, attr, val):
         attr (_type_): the attribute to add
         val (_type_): value to dd in attribute
 """
-    if not hasattr(obj, '__slots__') and not hasattr(obj, '__dict__'):
+    if not hasattr(obj, '__dict__'):
         raise TypeError("can't add new attribute")
-    if hasattr(obj, '__slots__') and not hasattr(obj, attr):
+    if not hasattr(obj, attr):
         raise TypeError("can't add new attribute")
     setattr(obj, attr, val)
