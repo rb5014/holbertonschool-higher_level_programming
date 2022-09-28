@@ -20,7 +20,6 @@ TypeError: append() takes exactly one argument (0 given)
 >>> my_list.append(5)
 >>> my_list.print_sorted()
 [-3, 2, 5]
+>>> print(my_list)
+[2, -3, 5]
 
->>> new = my_list.print_sorted()
->>> print(new)
-[-3, 2, 5]

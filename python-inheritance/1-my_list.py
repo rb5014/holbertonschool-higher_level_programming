@@ -11,4 +11,4 @@ class MyList(list):
             list, but sorted (ascending sort)
             all the elements of the list will be of type int
             """
-        return sorted(self)
+        print(sorted(self))
