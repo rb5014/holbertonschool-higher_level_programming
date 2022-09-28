@@ -4,9 +4,12 @@
 
 
 def is_same_class(obj, a_class):
-    """_summary_
+    """_summary_ returns True if the object is exactly an instance of
+    the specified class ; otherwise False.
 
     Args:
-        obj (_type_): 
-        a_class (_type_): _description_
+        obj (_type_): object to check
+        a_class (_type_): specified class to compare with object
     """
+
+    return isinstance(obj, a_class)
