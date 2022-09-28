@@ -12,4 +12,4 @@ def is_same_class(obj, a_class):
         a_class (_type_): specified class to compare with object
     """
 
-    return isinstance(obj, a_class)
+    return type(obj) is a_class
