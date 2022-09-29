@@ -12,6 +12,7 @@ def write_file(filename="", text=""):
     should overwrite content of the file  if it already exists
     Args:
         filename (str, optional): file to read. Defaults to "".
+        text: text to append
     """
     with open(filename, 'w',  encoding="utf-8") as f:
         return f.write(text)
