@@ -5,7 +5,7 @@
 
 class Student:
     """class student containing the firstname, lastname and age of a student
-    and the method to_json that retrieves the dictionnary representation of 
+    and the method to_json that retrieves the dictionnary representation of
     a 'Student' instance
     """
     def __init__(self, first_name, last_name, age):
