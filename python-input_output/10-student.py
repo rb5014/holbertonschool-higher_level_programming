@@ -17,4 +17,4 @@ class Student:
 
     def to_json(self, attrs=None):
         return {k: v for k, v in vars(self).items() if
-                (attrs and k in attrs) or not attrs}
+                (attrs and k in attrs) or type(attrs) is not list}
