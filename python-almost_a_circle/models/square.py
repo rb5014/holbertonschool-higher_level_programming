@@ -17,3 +17,9 @@ class Square(Rectangle):
             id (_type_, optional): id of the object. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        """ returns [Square] (<id>) <x>/<y> - <size>
+        """
+        return (f"[Square] ({self.id}) {self.x}/{self.y}"
+                f" - {self.width}")
