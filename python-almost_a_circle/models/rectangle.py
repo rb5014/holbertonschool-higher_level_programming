@@ -86,3 +86,9 @@ class Rectangle(Base):
         """
         print('\n'.join([''.join(['#' for x in range(self.__width)])
                          for y in range(self.__height)]))
+
+    def __str__(self):
+        """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+                f" - {self.__width}/{self.__height}")
