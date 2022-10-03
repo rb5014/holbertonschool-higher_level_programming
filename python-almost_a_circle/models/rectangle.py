@@ -67,7 +67,8 @@ class Rectangle(Base):
         self.__y = value
 
     def validateAttributes(self, varname, value):
-        # Validate attributes
+        """ Validate attributes with different tests
+        """
         if type(value) != int:
             raise TypeError(f"{varname} must be an integer")
         if varname in "width height" and value <= 0:
