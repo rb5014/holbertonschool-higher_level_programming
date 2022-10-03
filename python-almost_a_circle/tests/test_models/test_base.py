@@ -6,6 +6,8 @@ from models.base import Base
 
 
 class TestBaseClass(unittest.TestCase):
+    """Class testing the Base class
+    """
     def test_id(self):
         # Test with the different possible values of id
         b1 = Base()

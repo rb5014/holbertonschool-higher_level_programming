@@ -12,6 +12,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        # Instanciation of the class with the assignment of id
         if id is not None:
             self.id = id
         else:
