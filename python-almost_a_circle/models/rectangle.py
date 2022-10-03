@@ -79,29 +79,33 @@ class Rectangle(Base):
     def area(self):
         """returns the area value of the Rectangle instance
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """ prints in stdout the Rectangle instance with the character #
         """
-        print(('\n' * self.__y) +
-              (' ' * self.__x + '#' * self.__width + '\n') *
-              self.__height, end="")
+        print(('\n' * self.y) +
+              (' ' * self.x + '#' * self.width + '\n') *
+              self.height, end="")
 
     def __str__(self):
         """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
-                f" - {self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+                f" - {self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute
         """
-        try:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        except IndexError:
-            pass
+        if args and len(args) > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+        else:
+            for i in kwargs:
+                exec("%s = %d" % ("self." + i, kwargs[i]))
