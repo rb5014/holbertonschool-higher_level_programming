@@ -2,6 +2,7 @@
 """ module containing the class Rectangle that inherits from Base
 """
 from models.base import Base
+import inspect
 
 
 class Rectangle(Base):
@@ -18,11 +19,12 @@ class Rectangle(Base):
             y (int, optional): starting column of the rectangle. Defaults to 0.
             id (_type_, optional): id of the object. Defaults to None.
         """
+
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     # width getter and setter
     @property
@@ -31,6 +33,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        self.validateAttributes("width", value)
         self.__width = value
 
     # height getter and setter
@@ -40,6 +43,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        self.validateAttributes("height", value)
         self.__height = value
 
     # x getter and setter
@@ -49,6 +53,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        self.validateAttributes("x", value)
         self.__x = value
 
     # y getter and setter
@@ -58,4 +63,14 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        self.validateAttributes("y", value)
         self.__y = value
+
+    # Validate attributes
+    def validateAttributes(self, varname, value):
+        if type(value) != int:
+            raise TypeError(f"{varname} must be an integer")
+        if varname in "width height" and value <= 0:
+            raise ValueError(f"{varname} must be > 0")
+        if varname in "x y" and value < 0:
+            raise ValueError(f"{varname} must be >= 0")
