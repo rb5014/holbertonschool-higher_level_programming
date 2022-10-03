@@ -75,3 +75,8 @@ class Rectangle(Base):
             raise ValueError(f"{varname} must be > 0")
         if varname in "x y" and value < 0:
             raise ValueError(f"{varname} must be >= 0")
+
+    def area(self):
+        """returns the area value of the Rectangle instance
+        """
+        return self.__width * self.__height
