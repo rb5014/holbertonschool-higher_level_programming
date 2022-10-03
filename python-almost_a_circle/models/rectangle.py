@@ -2,7 +2,6 @@
 """ module containing the class Rectangle that inherits from Base
 """
 from models.base import Base
-import inspect
 
 
 class Rectangle(Base):
