@@ -3,8 +3,6 @@
 """
 import json
 
-from models.rectangle import Rectangle
-
 
 class Base:
     """
@@ -49,9 +47,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        if cls == Rectangle:
-            obj = Rectangle(1, 1)
-        else:
-            obj = cls(1)
+        obj = cls(1, 1, 0)
         obj.update(**dictionary)
         return obj
