@@ -2,6 +2,7 @@
 """ module containing the class Base
 """
 import json
+from os.path import exists
 
 
 class Base:
@@ -47,6 +48,15 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        obj = cls(1, 1, 0)
+        obj = cls(1, 2, 0)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+
+        if not exists(f"{cls.__name__}.json"):
+            return []
+        with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
+            return [cls.create(**d) for d in cls.from_json_string(f.read())]
