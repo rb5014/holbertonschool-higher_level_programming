@@ -17,25 +17,25 @@ class TestRectangleClass(unittest.TestCase):
         self.assertIsInstance(r1, Rectangle)
         r1 = Rectangle(1, 2, 3, 4)
         self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle("1", 2)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, "2")
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 2, "3")
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 2, 3, "4")
-        self.assertIsInstance(r1, Rectangle)
+        with self.assertRaises(TypeError):
+            self.assertIsNone(Rectangle("1", 2))
+        with self.assertRaises(TypeError):
+            self.assertIsNone(Rectangle(1, "2"))
+        with self.assertRaises(TypeError):
+            self.assertIsNone(Rectangle(1, 2, "3"))
+        with self.assertRaises(TypeError):
+            self.assertIsNone(Rectangle(1, 2, 3, "4"))
         r1 = Rectangle(1, 2, 3, 4, 5)
         self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(-1, 2)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, -2)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(0, 2)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 0)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 2, -3)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 2, 3, -4)
-        self.assertIsInstance(r1, Rectangle)
+        with self.assertRaises(ValueError):
+            self.assertIsNone(Rectangle(-1, 2))
+        with self.assertRaises(ValueError):
+            self.assertIsNone(Rectangle(1, -2))
+        with self.assertRaises(ValueError):
+            self.assertIsNone(Rectangle(0, 2))
+        with self.assertRaises(ValueError):
+            self.assertIsNone(Rectangle(1, 0))
+        with self.assertRaises(ValueError):
+            self.assertIsNone(Rectangle(1, 2, -3))
+        with self.assertRaises(ValueError):
+            self.assertIsNone(Rectangle(1, 2, 3, -4))
