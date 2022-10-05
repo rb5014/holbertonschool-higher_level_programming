@@ -11,12 +11,10 @@ class TestRectangleClass(unittest.TestCase):
     def test_rectangle_exists(self):
         # Test with the different possible values of the args in
         # rectangle object
-        r1 = Rectangle(1, 2)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 2, 3)
-        self.assertIsInstance(r1, Rectangle)
-        r1 = Rectangle(1, 2, 3, 4)
-        self.assertIsInstance(r1, Rectangle)
+        self.assertIsInstance(Rectangle(1, 2), Rectangle)
+        self.assertIsInstance(Rectangle(1, 2, 3), Rectangle)
+        self.assertIsInstance(Rectangle(1, 2, 3, 4), Rectangle)
+        self.assertIsInstance(Rectangle(1, 2, 3, 4, 5), Rectangle)
         with self.assertRaises(TypeError):
             self.assertIsNone(Rectangle("1", 2))
         with self.assertRaises(TypeError):
@@ -25,8 +23,6 @@ class TestRectangleClass(unittest.TestCase):
             self.assertIsNone(Rectangle(1, 2, "3"))
         with self.assertRaises(TypeError):
             self.assertIsNone(Rectangle(1, 2, 3, "4"))
-        r1 = Rectangle(1, 2, 3, 4, 5)
-        self.assertIsInstance(r1, Rectangle)
         with self.assertRaises(ValueError):
             self.assertIsNone(Rectangle(-1, 2))
         with self.assertRaises(ValueError):
