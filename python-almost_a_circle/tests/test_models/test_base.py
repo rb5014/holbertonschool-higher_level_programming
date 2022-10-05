@@ -20,3 +20,5 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(b4.id, 12)
         b5 = Base()
         self.assertEqual(b5.id, 4)
+        s = Base.to_json_string(None)
+        self.asserEqual(s, "[]")
