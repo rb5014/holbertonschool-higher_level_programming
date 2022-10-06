@@ -24,7 +24,7 @@ class TestRectangleClass(unittest.TestCase):
         sq = Square(1, 2, 3)
         self.assertIsInstance(sq, Square)
         self.assertEqual(sq.y, 3)
-        
+
         # Test of id with Square(1, 2, 3, 4)
         sq = Square(1, 2, 3, 4)
         self.assertIsInstance(sq, Square)
@@ -152,7 +152,8 @@ class TestRectangleClass(unittest.TestCase):
         # Test of Square.save_to_file([Square(1, 2)]) in Square
         Square.save_to_file([Square(1, 2, 0, 98)])
         with open("Square.json", 'r', encoding="utf-8") as f:
-            self.assertEqual(f.read(), '[{"id": 98, "x": 2, "size": 1, "y": 0}]')
+            self.assertEqual(f.read(), '[{"id": 98, "x": 2, '
+                             '"size": 1, "y": 0}]')
 
     def test_load_from_file(self):
         from os.path import exists
