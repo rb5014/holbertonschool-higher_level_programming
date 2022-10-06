@@ -109,7 +109,7 @@ class TestRectangleClass(unittest.TestCase):
     def test_to_dictionary(self):
         # Test of to_dictionary() in Rectangle
         self.assertEqual(Rectangle(1, 2).to_dictionary(),
-                         {'x': 0, 'y': 0, 'id': 1, 'height': 2, 'width': 1})
+                         {'x': 0, 'y': 0, 'id': 19, 'height': 2, 'width': 1})
 
     def test_update(self):
         # Test of update() in Rectangle
