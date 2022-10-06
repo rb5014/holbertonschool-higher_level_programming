@@ -10,7 +10,9 @@ class TestRectangleClass(unittest.TestCase):
     """
     def test_rectangle_regular(self):
         # Test of Rectangle(1, 2)
-        self.assertIsInstance(Rectangle(1, 2), Rectangle)
+        r = Rectangle(1, 2)
+        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.width, 1)
         # Test of Rectangle(1, 2, 3)
         self.assertIsInstance(Rectangle(1, 2, 3), Rectangle)
         # Test of Rectangle(1, 2, 3, 4)
