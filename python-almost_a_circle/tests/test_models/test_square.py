@@ -145,7 +145,7 @@ class TestRectangleClass(unittest.TestCase):
 
         # Test of Square.save_to_file([]) in Square
         aList = []
-        Square.save_to_file(aList)
+        Square.save_to_file([])
         with open("Square.json", 'r', encoding="utf-8") as f:
             self.assertEqual(f.read(), "[]")
 
