@@ -203,6 +203,7 @@ class TestRectangleClass(unittest.TestCase):
         # Test of Rectangle.save_to_file([]) in Rectangle
         aList = []
         Rectangle.save_to_file(aList)
+        self.assertTrue(exists("Rectangle.json"))
         with open("Rectangle.json", 'r', encoding="utf-8") as f:
             self.assertEqual(f.read(), "[]")
 
