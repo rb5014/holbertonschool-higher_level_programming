@@ -139,3 +139,57 @@ class TestRectangleClass(unittest.TestCase):
         # Test of y update(89, 1, 2, 3, 4) in Rectangle
         r.update(89, 1, 2, 3, 4)
         self.assertEqual(r.y, 4)
+
+        # Test of **kwargs:
+        # Test of update(**{'id': 89}) in Rectangle
+        r.update(**{'id': 89})
+        self.assertEqual(r.id, 89)
+
+        # Test of update(**{'id': 89, 'width': 1}) in Rectangle
+        r.update(**{'id': 89, 'width': 1})
+        self.assertEqual(r.width, 1)
+
+        # Test of update(**{'id': 89, 'width': 1, 'height': 2}) in Rectangle
+        r.update(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(r.height, 2)
+
+        # Test of update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        # in Rectangle
+        r.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(r.x, 3)
+
+        # Test of update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3,
+        # 'y': 4 }) in Rectangle
+        r.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(r.y, 4)
+
+    def test_create(self):
+        # Test of Rectangle.create(**{'id': 89}) in Rectangle
+        r = Rectangle.create(**{'id': 89})
+        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.id, 89)
+
+        # Test of Rectangle.create(**{'id': 89, 'width': 1}) in Rectangle
+        r = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.width, 1)
+
+        # Test of Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        # in Rectangle
+        r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.height, 2)
+
+        # Test of Rectangle.create(**{'id': 89, 'width': 1, 'height': 2,
+        # 'x': 3}) in Rectangle
+        r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.x, 3)
+
+        # Test of Rectangle.create(**{'id': 89, 'width': 1, 'height': 2,
+        # 'x': 3, 'y': 4}) in Rectangle
+        r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.y, 4)
+        
+
