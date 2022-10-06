@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """test module for the class Rectangle
 """
-from tarfile import StreamError
 import unittest
 from models.rectangle import Rectangle
 
@@ -108,8 +107,8 @@ class TestRectangleClass(unittest.TestCase):
 
     def test_to_dictionary(self):
         # Test of to_dictionary() in Rectangle
-        self.assertEqual(Rectangle(1, 2).to_dictionary(),
-                         {'x': 0, 'y': 0, 'id': 24, 'height': 2, 'width': 1})
+        self.assertEqual(Rectangle(17, 2, 0, 0, 19).to_dictionary(),
+                         {'x': 0, 'y': 0, 'id': 19, 'height': 2, 'width': 17})
 
     def test_update(self):
         # Test of update() in Rectangle
@@ -188,8 +187,41 @@ class TestRectangleClass(unittest.TestCase):
 
         # Test of Rectangle.create(**{'id': 89, 'width': 1, 'height': 2,
         # 'x': 3, 'y': 4}) in Rectangle
-        r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        r = Rectangle.create(**{'id': 89, 'width': 1,
+                                'height': 2, 'x': 3, 'y': 4})
         self.assertIsInstance(r, Rectangle)
         self.assertEqual(r.y, 4)
-        
 
+    def test_save_to_file(self):
+        from os.path import exists
+        # Test of Rectangle.save_to_file(None) in Rectangle
+        Rectangle.save_to_file(None)
+        self.assertTrue(exists("Rectangle.json"))
+        with open("Rectangle.json", 'r', encoding="utf-8") as f:
+            self.assertEqual(f.read(), "[]")
+
+        # Test of Rectangle.save_to_file([]) in Rectangle
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", 'r', encoding="utf-8") as f:
+            self.assertEqual(f.read(), "[]")
+
+        # Test of Rectangle.save_to_file([Rectangle(1, 2)]) in Rectangle
+        Rectangle.save_to_file([Rectangle(1, 2, 0, 0, 98)])
+        with open("Rectangle.json", 'r', encoding="utf-8") as f:
+            self.assertEqual(f.read(),
+                             "[{\"x\": 0, \"y\": 0, "
+                             "\"id\": 98, \"height\": 2, "
+                             "\"width\": 1}]")
+
+    def test_load_from_file(self):
+        from os.path import exists
+        # Test of Rectangle.load_from_file() when file doesn’t exist
+        aList = []
+        aList = Rectangle.load_from_file()
+        self.assertTrue(exists("Rectangle.json"))
+
+        # Test of Rectangle.load_from_file() when file exists
+        r1 = Rectangle(3, 8)
+        Rectangle.save_to_file([r1])
+        aList = Rectangle.load_from_file()
+        self.assertTrue(type(aList) == list)
