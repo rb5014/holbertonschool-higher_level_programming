@@ -2,6 +2,7 @@
 """ module containing the class Base
 """
 import json
+import csv
 from os.path import exists
 
 
@@ -60,3 +61,47 @@ class Base:
             return []
         with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
             return [cls.create(**d) for d in cls.from_json_string(f.read())]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        header, data = cls.to_csv_header_data(list_objs)
+        with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as file:
+            csvwriter = csv.writer(file)  # create a csvwriter object
+            csvwriter.writerow(header)  # write the header
+            csvwriter.writerows(data)  # write the rest of the data
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+        rows = []
+        if not exists(f"{cls.__name__}.csv"):
+            return rows
+        with open(f"{cls.__name__}.csv", "r", encoding="utf-8") as file:
+            csvreader = csv.reader(file)  # creste a csvreader object
+            header = next(csvreader)  # store a list of header's elements
+            for row in csvreader:  # store a list of lists of the values
+                rows.append(row)
+            # convert header and rows into a list of dictionary representations
+            # based on the csvreader object
+            list_dict = cls.from_csv_header_data_to_list_dict(header, rows)
+        return [cls.create(**d) for d in list_dict]
+
+    @staticmethod
+    def to_csv_header_data(list_objs):
+        """returns the header and data lists of list_objs"""
+        if list_objs is not None and len(list_objs) > 0:
+            list_objs = [obj.to_dictionary() for obj in list_objs]
+            header = [name for name in list_objs[0]]
+            data = [[row[value] for value in row] for row in list_objs]
+            return header, data
+        else:
+            return [], []
+
+    @staticmethod
+    def from_csv_header_data_to_list_dict(header, data):
+        """returns the list of dictionnary representations of instances
+        from header and data"""
+
+        return [{header[i]: int(values[i]) for i in range(len(values))}
+                for values in data]
