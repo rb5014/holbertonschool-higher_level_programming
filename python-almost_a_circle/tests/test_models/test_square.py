@@ -135,7 +135,13 @@ class TestRectangleClass(unittest.TestCase):
         self.assertIsInstance(r, Square)
         self.assertEqual(r.y, 3)
 
-    def test_save_to_file(self):
+    def test_save_to_file_empty(self):
+        # Test of Square.save_to_file([]) in Square
+        Square.save_to_file([])
+        with open("Square.json", 'r', encoding="utf-8") as f:
+            self.assertEqual(f.read(), "[]")
+
+    def test_save_to_file_None(self):
         from os.path import exists
         # Test of Square.save_to_file(None) in Square
         Square.save_to_file(None)
@@ -143,13 +149,7 @@ class TestRectangleClass(unittest.TestCase):
         with open("Square.json", 'r', encoding="utf-8") as f:
             self.assertEqual(f.read(), "[]")
 
-        # Test of Square.save_to_file([]) in Square
-        aList = []
-        Square.save_to_file([])
-        self.assertTrue(exists("Square.json"))
-        with open("Square.json", 'r', encoding="utf-8") as f:
-            self.assertEqual(f.read(), "[]")
-
+    def test_save_to_file_regular(self):
         # Test of Square.save_to_file([Square(1, 2)]) in Square
         Square.save_to_file([Square(1, 2, 0, 98)])
         with open("Square.json", 'r', encoding="utf-8") as f:
