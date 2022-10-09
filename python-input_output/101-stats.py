@@ -29,7 +29,7 @@ try:
         except (IndexError, ValueError):
             continue
         try:
-            key = int(x.split(' ')[7])
+            key = int(x.split(' ')[-2])
         except (IndexError, ValueError):
             continue
         if key in codesDict:
