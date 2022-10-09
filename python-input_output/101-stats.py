@@ -28,8 +28,8 @@ try:
             print_stats(fileSize, codesDict)
         try:
             fileSize += int(x.split(' ')[8])
-            key = x.split(' ')[7]
-        except IndexError:
+            key = int(x.split(' ')[7])
+        except (IndexError, TypeError):
             continue
         if key in codesDict:
             codesDict[key] += 1
