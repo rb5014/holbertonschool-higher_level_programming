@@ -1,8 +1,16 @@
 #!/usr/bin/python3
+"""script that reads stdin line by line and computes metrics
+"""
 import sys
 
 
 def print_stats(fSize, dict):
+    """print stats after each 10 lines or ctrl-c
+
+    Args:
+        fSize (int): total size
+        dict (dict)): dict containing codes and the nb of occurences
+    """
     print(f"File size: {fSize}")
     for key in sorted(dict.keys()):
         print(f"{key}: {dict[key]}")
