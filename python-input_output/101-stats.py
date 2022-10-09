@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """script that reads stdin line by line and computes metrics
 """
+from pyexpat.errors import codes
 import sys
 
 
@@ -32,6 +33,7 @@ try:
         else:
             codesDict[key] = 1
         count += 1
-except:
-    print_stats(fileSize, codesDict)
+except KeyboardInterrupt:
     raise
+finally:
+    print_stats(fileSize, codesDict)
