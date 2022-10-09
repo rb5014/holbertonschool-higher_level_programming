@@ -28,6 +28,9 @@ try:
             print_stats(fileSize, codesDict)
         try:
             fileSize += int(x.split(' ')[8])
+        except (IndexError, ValueError):
+            continue
+        try:
             key = int(x.split(' ')[7])
         except (IndexError, ValueError):
             continue
