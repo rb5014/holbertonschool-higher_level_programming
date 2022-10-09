@@ -26,8 +26,11 @@ try:
         if count == 10:
             count = 0
             print_stats(fileSize, codesDict)
-        fileSize += int(x.split(' ')[8])
-        key = x.split(' ')[7]
+        try:
+            fileSize += int(x.split(' ')[8])
+            key = x.split(' ')[7]
+        except IndexError:
+            continue
         if key in codesDict:
             codesDict[key] += 1
         else:
