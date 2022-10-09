@@ -23,9 +23,7 @@ count = 0
 
 try:
     for x in sys.stdin:
-        if count == 10:
-            count = 0
-            print_stats(fileSize, codesDict)
+        count += 1
         try:
             fileSize += int(x.split(' ')[8])
         except (IndexError, ValueError):
@@ -38,7 +36,9 @@ try:
             codesDict[key] += 1
         else:
             codesDict[key] = 1
-        count += 1
+        if count == 10:
+            count = 0
+            print_stats(fileSize, codesDict)
 except KeyboardInterrupt:
     raise
 finally:
