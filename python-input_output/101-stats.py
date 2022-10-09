@@ -29,7 +29,7 @@ try:
         try:
             fileSize += int(x.split(' ')[8])
             key = int(x.split(' ')[7])
-        except (IndexError, TypeError):
+        except (IndexError, ValueError):
             continue
         if key in codesDict:
             codesDict[key] += 1
