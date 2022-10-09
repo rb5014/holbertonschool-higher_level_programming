@@ -25,7 +25,7 @@ try:
     for x in sys.stdin:
         count += 1
         try:
-            fileSize += int(x.split(' ')[8])
+            fileSize += int(x.split(' ')[-1])
         except (IndexError, ValueError):
             continue
         try:
