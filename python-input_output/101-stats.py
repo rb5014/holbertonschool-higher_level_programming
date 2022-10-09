@@ -32,6 +32,6 @@ try:
         else:
             codesDict[key] = 1
         count += 1
-except KeyboardInterrupt:
+except:
     print_stats(fileSize, codesDict)
     raise
