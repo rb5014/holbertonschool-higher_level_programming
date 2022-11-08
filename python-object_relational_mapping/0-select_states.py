@@ -12,3 +12,12 @@ Lists all states from the database hbtn_0e_0_usa:
 
 
 import MySQLdb
+from sys import argv as a
+
+db = MySQLdb.connect(host="localhost", user=a[1],
+                     password=a[2], db=a[3], port=3306)
+c = db.cursor()
+c.execute("""SELECT * FROM states""")
+
+for row in c.fetchall():
+    print(row)
