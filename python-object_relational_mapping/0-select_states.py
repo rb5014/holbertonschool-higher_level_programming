@@ -9,6 +9,8 @@ Lists all states from the database hbtn_0e_0_usa:
     Results must be displayed as they are in the example below
     Your code should not be executed when imported
 """
+
+
 import MySQLdb
 from sys import argv as a
 
