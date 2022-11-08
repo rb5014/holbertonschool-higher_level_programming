@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """
 0-select_states - Lists all states from the database hbtn_0e_0_usa:
 
@@ -13,15 +11,19 @@
     Results must be displayed as they are in the example below
     Your code should not be executed when imported
 """
-import MySQLdb
+    import MySQLdb
+    from sys import argv as a
 
 
-from sys import argv as a
+if __name__ == "__main__" :
+    """Connect to the server and go into database 
+    and get the data from states
+    """
 
-db = MySQLdb.connect(host="localhost", user=a[1],
-                     password=a[2], db=a[3], port=3306)
-c = db.cursor()
-c.execute("""SELECT * FROM states""")
+    db = MySQLdb.connect(host="localhost", user=a[1],
+                        password=a[2], db=a[3], port=3306)
+    c = db.cursor()
+    c.execute("""SELECT * FROM states""")
 
-for row in c.fetchall():
-    print(row)
+    for row in c.fetchall():
+        print(row)
