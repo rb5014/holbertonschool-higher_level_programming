@@ -16,12 +16,12 @@ from sys import argv as a
 
 
 if __name__ == "__main__":
-    """Connect to the server and go into database 
+    """Connect to the server and go into database
     and get the data from states
     """
 
     db = MySQLdb.connect(host="localhost", user=a[1],
-                        password=a[2], db=a[3], port=3306)
+                         password=a[2], db=a[3], port=3306)
     c = db.cursor()
     c.execute("""SELECT * FROM states""")
 
