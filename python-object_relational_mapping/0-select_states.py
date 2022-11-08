@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 """
 Lists all states from the database hbtn_0e_0_usa:
 
@@ -11,11 +13,10 @@ Lists all states from the database hbtn_0e_0_usa:
     Results must be displayed as they are in the example below
     Your code should not be executed when imported
 """
-
-
 import MySQLdb
-from sys import argv as a
 
+
+from sys import argv as a
 
 db = MySQLdb.connect(host="localhost", user=a[1],
                      password=a[2], db=a[3], port=3306)
