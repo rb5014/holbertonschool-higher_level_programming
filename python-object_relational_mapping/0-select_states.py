@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" 
+import MySQLdb
+from sys import argv as a
+
+
+"""
 Lists all states from the database hbtn_0e_0_usa:
 
     Your script should take 3 arguments: mysql username, mysql password and database name (no argument validation needed)
@@ -10,9 +14,6 @@ Lists all states from the database hbtn_0e_0_usa:
     Your code should not be executed when imported
 """
 
-
-import MySQLdb
-from sys import argv as a
 
 db = MySQLdb.connect(host="localhost", user=a[1],
                      password=a[2], db=a[3], port=3306)
