@@ -21,8 +21,10 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=a[1],
                          password=a[2], db=a[3], port=3306)
     c = db.cursor()
-    c.execute("""SELECT * FROM states""")
+    c.execute("""SELECT cities.id, cities.name, states.name FROM cities
+              LEFT JOIN states ON cities.state_id = states.id
+              ORDER BY cities.id ASC""")
 
     for row in c.fetchall():
-        print(row) if row[1] == a[4] else None
+        print(row)
     c.close()
