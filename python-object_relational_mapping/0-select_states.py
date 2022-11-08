@@ -11,11 +11,11 @@
     Results must be displayed as they are in the example below
     Your code should not be executed when imported
 """
-    import MySQLdb
-    from sys import argv as a
+import MySQLdb
+from sys import argv as a
 
 
-if __name__ == "__main__" :
+if __name__ == "__main__":
     """Connect to the server and go into database 
     and get the data from states
     """
