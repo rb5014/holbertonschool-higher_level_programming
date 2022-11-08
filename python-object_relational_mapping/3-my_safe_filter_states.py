@@ -22,7 +22,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=a[1],
                          password=a[2], db=a[3], port=3306)
     c = db.cursor()
-    c.execute("""SELECT * FROM `states` WHERE `name` = '{}'""".format(a[4]))
+    c.execute("""SELECT * FROM `states`""")
 
     for row in c.fetchall():
         print(row) if row[1] == a[4] else None
