@@ -18,4 +18,4 @@ if __name__ == "__main__":
     updated_state = session.get(State, 2)
     updated_state.name = "New Mexico"
 
-    result = session.query(State).all()
+    session.close()
