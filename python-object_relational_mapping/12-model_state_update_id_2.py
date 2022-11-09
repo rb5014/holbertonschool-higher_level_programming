@@ -17,5 +17,4 @@ if __name__ == "__main__":
 
     updated_state = session.get(State, 2)
     updated_state.name = "New Mexico"
-
-    session.close()
+    session.commit()
