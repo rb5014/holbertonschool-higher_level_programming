@@ -17,4 +17,7 @@ if __name__ == "__main__":
 
     row = session.query(State).first()
 
-    print("{}: {}".format(row.id, row.name))
+    if row:
+        print("{}: {}".format(row.id, row.name))
+    else:
+        print("Nothing")
