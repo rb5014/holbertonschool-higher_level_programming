@@ -19,4 +19,7 @@ if __name__ == "__main__":
 
     row = session.query(State).filter(State.name == a[4]).first()
 
-    print(row.id) if row else "Not found"
+    if row:
+        print(row.id)
+    else:
+        print("Not found")
