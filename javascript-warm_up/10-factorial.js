@@ -1,10 +1,9 @@
 #!/usr/bin/node
 function factorial (num) {
-  let result = 1;
-  for (let i = num; i > 1; i--) {
-    result *= i;
+  if (num === 1) {
+    return 1;
   }
-  return result;
+  return num * factorial(num - 1);
 }
 
 const num = parseInt(process.argv[2]);
