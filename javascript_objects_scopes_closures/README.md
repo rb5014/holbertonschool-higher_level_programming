@@ -1,0 +1,1 @@
+This is the readme file of the project javascript_objects_scopes_closures
