@@ -6,8 +6,8 @@ request(myUrl, function (error, response, body) {
   const films = JSON.parse(body);
   let count = 0;
   for (let i = 0; i < films.results.length; i++) {
-    if (films.results[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-      count += 1;
+    if (films.results[i].characters.filter((character => character.includes('18'))).length > 0) {
+      count+= 1;
     }
   }
   console.log(count);
