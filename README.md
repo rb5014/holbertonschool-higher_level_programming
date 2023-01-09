@@ -22,8 +22,6 @@ scripting. The specific list of projects contained follows:
 * [ SQL - Introduction](./SQL_introduction)
 * [ SQL - More queries](./SQL_more_queries)
 * [ Python - Object-relational mapping](./python-object_relational_mapping)
-* [ Python - Network #0](./python-network_0)
-* [ Python - Network #1](./python-network_1)
 * [ Javascript - Warm up](./javascript-warm_up)
 * [ Javascript - Objects, Scopes and Closures](./javascript_objects_scopes_closures)
 * [ Javascript - Web scraping](./javascript-web_scraping)
@@ -31,7 +29,7 @@ scripting. The specific list of projects contained follows:
 
 ## Author :black_nib:
 
-* **Brennan D Baraban** <[bdbaraban](https://github.com/bdbaraban)>
+* **Romain BAYLE rb5014** <[rb5014](https://github.com/rb5014)>
 
 ## Acknowledgements :pray:
 
